@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="DeltaValuePresenter" name="widget" native="true">
+   <widget class="QDeltaEdit" name="widget" native="true">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -48,9 +48,9 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>DeltaValuePresenter</class>
+   <class>QDeltaEdit</class>
    <extends>QWidget</extends>
-   <header>deltavaluepresenter.h</header>
+   <header>qdeltaedit.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

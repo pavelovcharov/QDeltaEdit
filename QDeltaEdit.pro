@@ -26,11 +26,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    deltavaluepresenter.cpp
+    deltavaluepresenter.cpp \
+    qdeltaedit.cpp
 
 HEADERS += \
         mainwindow.h \
-    deltavaluepresenter.h
+    deltavaluepresenter.h \
+    qdeltaedit.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    qdeltaedit.ui
