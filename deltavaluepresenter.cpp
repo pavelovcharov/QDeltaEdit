@@ -1,4 +1,7 @@
 #include "deltavaluepresenter.h"
+#include <QPainterPath>
+#include <QPen>
+
 DeltaValuePresenter::DeltaValuePresenter(QWidget* parent) : QWidget(parent),
     _value(0), _target(0){
 }
@@ -15,26 +18,22 @@ void DeltaValuePresenter::paintEvent( QPaintEvent * )
 
 void DeltaValuePresenter::drawColorBar( QPainter *painter, const QRect &rect ) const
 {
-
     painter->save();
     painter->setClipRect( rect );
     painter->setClipping( true );
 
-    QColor d_dark = Qt::black;
-
-//    painter->fillRect( rect, d_dark );
-
-
     QColor deltaColor = Qt::yellow;
 
     QRect section;
-
-    double v = _value;
-    double t = _target;
-    double s = v/t;
-
     double sectionSize = _value/_target; // TODO: min-max
     section.setRect( rect.x(), rect.y(), sectionSize*rect.width(), rect.height());
     painter->fillRect( section, deltaColor );
+
+    QPainterPath path;
+    path.addRect(rect.x(), rect.y(), rect.width()-1, rect.height()-1);
+    QPen pen(Qt::black, 1);
+    painter->setPen(pen);
+    painter->drawPath(path);
+
     painter->restore();
 }
